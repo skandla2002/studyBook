@@ -1,0 +1,102 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset='utf-8'>
+</head>
+<body>
+	<script>
+		console.log('cafe' === 'caf\u00e9');
+		//
+		/*  */  //
+		/*
+		*
+		*/
+		
+		12  // 숫자 12
+		1.2 // 숫자 1.2
+		"hello world" // 문자열
+		'Hi' // 다른 문자열
+		true // 불리언값
+		false // 다른 불리언값
+		var reg = /javascript/gi; // '정규표현식' 리터럴(패턴 매칭용)
+		null // 객제가 존재하지 않음
+		
+		var initObj = { x:1, y:2}; // 객체 초기자
+		var initArr = [1,2,3,4,5]; // 배열 초기자
+		
+		var rightIdentifier = [i , my_variable_name, v13, _dummy, $str];
+		var si = true;
+		var π = 3.14;
+		
+		// 예약어
+		
+		var reserveText = [break, delete, function, return, typeof, case, do, if, switch, var, catch, else, in, this, void, continue, false, instanceof, throw, while, debugger, finally, new, true, with, default, for, null, try];
+		//ECMAScript5에서 부터 사용 불가
+		var reserveTextECMA5 = [class, const, enum, export, extends, import, super];
+		//엄격 모드에서 사용 불가
+		var reserveTextStrict = [implements, let, private, public, yield, interface, package, protected, static];
+		//엄격 모드에서 인자, 함수로 사용 불가
+		var reserveTextStrictNotArg_Fun = [arguments, eval];
+		
+		
+		// ECMAScript3에서 자바 예약어 전부를 통일하게 지정하였음
+		var reserveTextECMA3 = [abstract, duble, goto, native, static, boolean, enum, implements, package, super, byte, eport, import, private, synchronized, char, extends, int, protected, throws, class, final, interface, public, transient, const, float, long, short, volatile];
+		
+		// 전역 변수와 함수를 정의함(이 함수는 변수나 함수이름으로 사용하지 않아야함)
+		var globalArgFunc = [arguments, encodeURI, Infinity, Number, RegExp, Array, encodeURIComponent, isFinite, Object, String, Boolean, Error, isNaN, parseFloat, SyntaxError, Date, eval, JSON, parseInt, TypeError, decodeURI, EvalError, Math, RangeError, undefined, decodeURIComponent, Function, NaN, ReferenceError, URIError];
+		
+		// 선택적인 세미콜론 사용
+		a = 3;
+		b = 4;
+		
+		a = 3; b = 4;
+		var a
+		a
+		=
+		3
+		console.log(a)
+		
+		var a;  a = 3; console.log(a);
+		
+		// 문제되는 상황
+		var y = x + f
+		(a+b).toString()
+		
+		var y = x + f(a+b).toString(); // 변경된 내용
+		
+		// 보완할 내용
+		
+		var x = 0 // 세미콜론이 생략됨
+		;[x,x+1,x+2].forEach(console.log) // 문장 앞에 넣은 방어적인 세미콜린이
+										  // 이 문장을 위의 문장과 구분되게 해준다.
+										  
+		// 예외 상황(세미콜론 생략 안함)
+		
+		function expectEx(){
+			
+			var first = true;
+			var second = true;
+			// 첫번째
+			if(first){
+				return
+				true;
+			}else if(second){
+				return; true;
+			}
+			
+		}
+		
+		// 특이 케이스
+		
+		x
+		++
+		y
+		
+		// x++; y 가 아니라 x; ++y;로 해석된다.
+		
+		
+		
+		
+		
+	</script>
+</body></html>

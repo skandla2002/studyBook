@@ -1,0 +1,19 @@
+http://hatemogi.com/holiday-project-day-01/ 참조
+- 
+0. git, node 받기
+
+http://expressjs.com/ 에서 express 받기
+npm install express --save
+
+express generator 만들기
+ - npm install express-generator -g
+ 
+ - express -h
+ 
+ - express myapp : skeleton 생성
+ 
+ - cd myapp : 위치 이동
+ 
+ - npm install : npm 설치
+ 
+ - set DEBUG=myapp:* & npm start: myapp 서버 기동

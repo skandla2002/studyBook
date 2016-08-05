@@ -1,0 +1,11 @@
+- yeoman, grunt, git, node, npm, bower 설치한다.
+   node -v / node --version : 버전 확인
+   npm -version : 버전확인
+- 패키지 설치하기
+  npm install -g yo / npm install -g grunt-cli / npm install -g bower
+
+- yeoman package 중 사용할것 미리 설정하기
+  npm insatll -g generator-angular
+  npm insatll -g generator-angular generator-karma
+  
+- yo angular 로 최초 설치

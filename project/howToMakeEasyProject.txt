@@ -1,9 +1,17 @@
+
+
+0. 기본 프로젝트 준비하기
+- (과거 방식, 사용안함)curl http://npmjs.org/install.sh | sh
+- npm insatll -g / --save (project name) 
+- <protocol>://[<user>[:<password>]@]<hostname>[:<port>][:][/]<path>[#<commit-ish>]
+
+1. 실행 하기
 - yeoman, grunt, git, node, npm, bower 설치한다.
    node -v / node --version : 버전 확인
    npm -version : 버전확인
 - 패키지 설치하기
-  npm install -g yo / npm install -g grunt-cli / npm install -g bower
-
+ 전역설치(이후 지역 설치 해야함):  npm install -g yo / npm install -g grunt-cli / npm install -g bower
+ 지역설치(소스 작성 위치): npm install --save yo / npm install --save grunt-cli / npm install -g bower
 - yeoman package 중 사용할것 미리 설정하기
   npm insatll -g generator-angular
   npm insatll -g generator-angular generator-karma

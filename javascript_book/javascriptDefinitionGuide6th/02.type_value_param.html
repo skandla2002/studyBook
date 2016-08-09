@@ -11,16 +11,162 @@
 		console.log(0xCAFE911);
 		//8진수
 		console.log(0377);// 3*64 + 7*8 + 7 = 255
+		var x = 3, y = 2 , z = 0;
 		console.log(Math.pow(2,53), // 2의 53제곱
 				Math.round(.6), // 1.0, 반올림
 				Math.ceil(.6), // 올림
 				Math.floor(.6), // 내림
 				Math.abs(-5), // 절대값 5
-				Math.max(x,y,z) // 
-				)
-				
+				Math.max(x,y,z) // 가장 큰 인자 반환
+				,Math.min(x,y,z) // 가장 작은 인자 반환
+				,Math.random() //0 ~ 1 사이 임의수 반환
+				,Math.PI // 원주율
+				,Math.E //자연 로그 상수
+				,Math.sqrt(3) //3의 제곱근
+				,Math.pow(3,3) //3의 3제곱근
+				,Math.sin(0) // 삼각함수(cos, atan 등)
+				,Math.log(10) // 자연로그 10
+				,Math.log(100)/Math.LN10 // 밑이 10인 로그100
+				,Math.log(512)/Math.LN2 // 밑이 2인 512
+				,Math.exp(3)  // Math.E의 3거듭제곱
+				);
+	console.log("================");
+	console.log(Infinity // 일고 쓰기 가능한 변수로 Infinity로 초기화
+			,Number.POSITIVE_INFINITY //infinity와 같은 값이지만 읽기 전용
+			,1/0	// Infinity와 같음
+			,Number.MAX_VALUE +1 // Infinity로 평가
+			,Number.NEGATIVE_INFINITY // 음의 무한대
+			,-Infinity
+			,-1/0
+			,Number.MAX_VALUE-1
+			,NaN //읽고 쓰기 가능한 변수로 NaN으로 초기화
+			,Number.NaN // NaN과 같지만 읽기만 가능
+			,0/0 // NaN으로 평가
+			,Number.MIN_VALUE/2 //언더플로: 0으로 간주
+			,-Number.MIN_VALUE/2 // 음의 0으로 간주
+			,-1/Infinity // 음의 0으로 간주
+			,-0);
+	
+	console.log(NaN == NaN, NaN === NaN); //false, false
 		
+	var zero = 0;   // 0
+	var negz = -0;  // 음의 0
+	console.log(zero === negz  // true
+			,1/zero === 1/negz  // false
+			);
+	
+	console.log("3.1.4 이진 부동 소수점과 반올림 오류");
+	var x = .3 - .2; // 0.3 -0.2
+	var y = .2 - .1; // 0.2 - 0.1
+	console.log(x==y  // false
+			, x== .1  // false
+			, y== .1  // true
+			);
+	
+	console.log("3.1.5 날짜와 시간");
+	
+	var then = new Date(2010, 0 ,1); // 2010년 1월 1일
+	var later = new Date(2010, 0, 1, 17, 10, 30); // 2010 년 1월 1일 오후 5시 10분 30초
+	
+	var now = new Date(); // 현재 날짜 시간
+	var elapsed = now - then; // 밀리초로 계산
+	console.log(
+			later.getFullYear()  // 2010
+			,later.getMonth()		// 0
+			,later.getDate()			//1로 시작
+			,later.getDay()			// 요일은 0을 일요일
+			,later.getHours()  // 17시
+			,later.getUTCHours()	// 시간대에 의존한 UTC 시간
+			,later.toString()	//"Fri Jan 01 2010 17:10:30 GMT+0900 (대한민국 표준시)"  
+			,later.toUTCString() // "Fri, 01 Jan 2010 08:10:30 GMT"
+			,later.toLocaleDateString()	// "2010. 1. 1."
+			,later.toLocaleTimeString() // "오후 5:10:30" 
+			,later.toISOString() // "2010-01-01T08:10:30.000Z"
+			);
+	
+	console.log("3.2 텍스트");
+	console.log("3.2.1 문자열 리터럴");
+	
+	console.log(
+			"two\nlines" // 두줄 표현
+			,"one\
+			long\
+			line" // 3줄 표현, ECMA5에서만 가능
+	);
+	console.log("3.2.2 문자열 리터럴 내의 이스케이프 문자열"	);
+	
+	console.log('You\'re right, it can\'t be a quote');
+	
+	console.log('자바스크립트 이스케이프 시퀀스들');
+	console.log(
+		'\0' // 널문자(\u0000)
+		,'\b' // 백스페이스(\u0008)
+		,'\t' // 수평탭(\u0009)
+		,'\n' // 줄바꿈 문자(\u000A)
+		,'\v' // 수직 탭(\u0008)
+		,'\f' // 폼피드(\u000C)
+		,'\r' //캐리지 리턴(\u000D)
+		,'\"' // 큰따옴표(\u0022)
+		,'\'' // 작은 따옴표(\u0027)
+		,'\\' // 역슬레시(\u005C)
+		//,'\x' // 두개의 16진수 숫자 XX에 의해 지정되는 Latin-1 문자
+		//,'\u' // 네 개의 16진수 숫자 XXXX에 의해 지정되는 유니코드 문자
+	);
+	
+	console.log("3.2.3 문자열 다루기");
+	
+	msg = "Hello, " + "world" ; // 문자열 합치기
+	var name = 'Andy';
+	greeting = "Welcome to my blog," + " "  + name;
+
+	console.log(greeting.length);
+	
+	var s = "hello, world" // 'hello world'를 사용한다.
+	console.log(
+			s.charAt(0) // h
+			,s.charAt(s.length-1) // d
+			,s.substring(1,4) // ell
+			,s.slice(1,4) // ell
+			,s.slice(-3) // rld
+			,s.indexOf("l") // 2
+			,s.lastIndexOf("l") // 10
+			,s.indexOf("l", 3) // 3 (세번째 이후 "l" 찾기)
+			,s.split(", ") //["Hello", "world"] 나뉨
+			,s.replace("h", "H") // Hello, world, 기존 문자열 변경이 아닌 변경 값만 리턴
+			,s.toUpperCase() // HELLO, WORLD, 기존 문자열 변경이 아닌 변경 값만 리턴
+			);
+	s = "hello, world";
+	console.log(
+			s[0] // h
+			,s[s.length-1] // d
+			);
+	
+	console.log("3.2.4 패턴 매칭");
+	
+	console.log("RegExp() 생성자 정의함");
+	
+	console.log(
+		/^HTML/ // html로 시작하는 문자열
+		,/[1-9][0-9]*/ //0이아닌 숫자로 시작하는 숫자
+		,/\bjavascript\b/i  //대소문자 구별 없이 javascript와 일치하는 문자열
+	);
+	
+	var text = "testing: 1, 2, 3";//문자열
+	var pattern = /\d+/g ; // 하나 이상의 모든 숫자와 일치
+	console.log(
+		pattern.test(text) // true
+		,text.search(pattern) // 9 첫번째로 매치하는 문자열 위치
+		,text.match(pattern) // ["1", "2", "3"] 일치된 항목의 배열
+		,text.replace(pattern, "#")  // "testing: #, #, #"
+		,text.split(/\D+/) // ["", "1", "2", "3"]
+	);
+	
+	
+	
 	</script>
+	
+	<button onclick="alert('Thank you')">Click Me</button>
+	
 
 </body>
 </html>

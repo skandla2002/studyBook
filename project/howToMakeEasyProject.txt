@@ -17,3 +17,6 @@
   npm insatll -g generator-angular generator-karma
   
 - yo angular 로 최초 설치
+
+
+- karma-cli 설치, karam init으로 parameter 선택 최종 karma start로 실행

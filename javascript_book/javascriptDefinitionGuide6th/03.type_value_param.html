@@ -161,6 +161,143 @@
 		,text.split(/\D+/) // ["", "1", "2", "3"]
 	);
 	
+	console.log("3.3 불리언 값");
+	console.log("false value:", undefined, null, 0, -0, NaN, "")
+	console.log("3.4 null과 undefined");
+	console.log(null == undefined, // ture
+				null === undefined // false
+				, "null 이 인자로 넘기기 더 좋다"
+				);
+	console.log("3.5 전역 객체");
+	var global = this; // 전역 객체를 참조하는 변수를 정의함
+	
+	console.log("3.6 wrapper 객체");
+	console.log("문자열 프로퍼티를 갖는 객체"
+				);
+	var s = "test";
+	s.len = 4;
+	var t = s.len;
+	console.log("t",t); // 프로퍼티를 임시로 넣었던 것이기 때문에 값이 없음
+	
+	var s = "test", n=1, b=true;
+	var S = new String(s); // String. 객체
+	var N = new Number(n);
+	var B = new Boolean(b);
+	
+	S.len = 4;
+	var t = S.len;
+	console.log("t",t); // wrapper 함수는 프로퍼티를 넣었던 것이기 때문에 값이 존재함
+	 
+	
+	console.log("3.7 변경 불가능한 원시 타입값과 변경 가능 객체 참조");
+	console.log("3.8 타입 변환");
+	console.log(
+			10 + " objects" // "10 objects"
+			,"7" * "4" // 28
+			,1-"x" // NaN
+			,NaN + " objects" // "NaN objects"
+			);
+	console.log(
+			null == undefined // true
+			,"0" == 0 // 비교전 숫자 변환, true
+			,0 == false // 불리언은 비교전 숫자 변환, ture
+			,"0" == false // 두 피연산자는 비교전 숫자로 변환, true 
+			);
+	console.log(
+		Number("3") // 3
+		,String(false) // "false", false.toString()과 같다
+		,Boolean([]) // true
+		,Object(3) // new Number(3)
+	);
+	console.log(
+		x + "" // String(x)
+		,+x // Number(x), x-0
+		,!!x //Boolean(x)
+	);
+	var n = 17;
+	binary_string = n.toString(2); // "10001"
+	octal_string = "0" + n.toString(8); // "021"
+	hex_string = "0x" + n.toString(16); // "0x11"
+	
+	var n = 123456.789;
+	console.log(
+		n.toFixed(0)  // 123457     
+		,n.toFixed(2) // 123456.79
+		,n.toFixed(5) //123456.78900
+		,n.toExponential(1) //1.2e+5
+		,n.toExponential(3) // 1.235e+5 
+		,n.toPrecision(4) //1.235e+5
+		,n.toPrecision(7) //123456.8 
+		,n.toPrecision(10) //123456.7890
+	);
+	
+	console.log("3.9 변수 선언");
+	
+	var i;
+	var sum;
+	var i,sum;
+	for(var i = 0 ; i <10; i++) { console.log(i);}
+	
+	console.log("3.10 변수의 유효범위");
+	
+	var scope = "global"; // 전역 변수 선언
+	function checkscope(){
+		var scope = "local";
+		return scope;
+	}
+	console.log(checkscope());  // "local"
+	
+	scope = "global";
+	function checkscope2(){
+		scope = "local";
+		myscope = "local";
+		return[scope.myscope];
+	}
+	console.log(checkscope2(), scope, myscope); //  "local" "local"
+	
+	var scope3 = "global scope"; // 전역 변수
+	function checkscope3(){
+		var scope3 = "local scope3";
+		function nested(){
+			var scope3 = "nested scope";
+			return scope3;
+		}
+		return nested();
+	}
+	console.log(checkscope3());
+	
+	var scope4 = "global" ;
+	function f1(){
+		console.log(scope4); // "undefined" 출력
+		var scope4 = "local";
+		console.log(scope4);  // local 출력
+	}	
+	f1();
+	
+	function f2(){
+		var scope4;    // 지역 변수는 함수 맨 꼭대기에서 선언
+		console.log(scope4);  // scope변수는 존재하지만 아직 undefined 임
+		scope4 = "local";
+		console.log(scope4); // "local"
+		
+	}
+	f2();
+	
+	console.log("선언한 변수는 delete로 삭제할 수없다.");
+	
+	var truevar = 1;
+	fakevar = 2;
+	this.fakevar2 = 3;
+	console.log(truevar, fakevar, this.fakevar2);
+	
+	delete truevar; // false, var로 선언한 값을 지워지지 않음
+	delete fakevar; // true
+	delete this.fakevar2;  // true
+	try{
+		console.log(truevar, fakevar, this.fakevar2);
+	}catch (e){
+		console.log(e.toString());
+	}
 	
 	
 	</script>

@@ -11,7 +11,7 @@
    npm -version : 버전확인
 - 패키지 설치하기
  전역설치(이후 지역 설치 해야함):  npm install -g yo / npm install -g grunt-cli / npm install -g bower
- 지역설치(소스 작성 위치): npm install --save yo / npm install --save grunt-cli / npm install -g bower
+ 지역설치(소스 작성 위치): npm install --save yo / npm install --save grunt-cli / npm install --save bower
 - yeoman package 중 사용할것 미리 설정하기
   npm insatll -g generator-angular
   npm insatll -g generator-angular generator-karma

@@ -26,3 +26,8 @@
 - karma-cli 설치, karam init으로 parameter 선택 최종 karma start로 실행
  - 오류 처리: karma start Cannot find module 'jasmine-core'
              -> npm insatll -g jasmine-core
+           
+3. test 소스 만들기
+- karma.conf.js에서 config.set에 값 추가 및 수정한다.
+  ex)  basePath: '../', // 상위 폴더 기준으로 파일 찾기
+       files: [ .. ] // 사용되는 js 파일 전체 경로 작성하기

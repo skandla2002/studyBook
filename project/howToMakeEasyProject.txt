@@ -20,6 +20,13 @@
 
 
 2. Test 관련 설치 하기
+(install AngularJS
+ install Karma
+ install Jasmine
+ install ngMock
+ Browers
+ create foler
+ karma.conf.js)
 - npm init -> package.js 설치
 - test 폴더 생성 후 해당 폴더에서 karma init으로 karma.conf.js 설치
 - karma start test/karma.conf.js 로 실행 하면서 오류 처리

@@ -44,3 +44,5 @@
 4. requierJS 사용하고 angularJS 함께인 경우 
  
 - 참고:  http://engineering.radius.com/post/77677879234/testing-angularjs-in-a-requirejs-environment
+
+5. npm init, npm install bower, npm install ..

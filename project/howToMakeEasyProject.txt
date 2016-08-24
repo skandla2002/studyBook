@@ -24,7 +24,7 @@
  install Karma
  install Jasmine
  install ngMock
- Browers
+ Browers launcher
  create foler
  karma.conf.js)
 - npm init -> package.js 설치

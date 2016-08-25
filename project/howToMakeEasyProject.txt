@@ -11,11 +11,11 @@
    npm -version : 버전확인
 - 패키지 설치하기
  전역설치(이후 지역 설치 해야함):  npm install -g yo / npm install -g grunt-cli / npm install -g bower
- 지역설치(소스 작성 위치): npm install --save yo / npm install --save grunt-cli / npm install --save bower
+ 지역설치(소스 작성 위치): npm install --save yo / npm install --save grunt-cli / npm install --save bower / npm install jasmine-core
 - yeoman package 중 사용할것 미리 설정하기
   npm insatll -g generator-angular
   npm insatll -g generator-angular generator-karma
-  
+  // 잘못된 내용임 npm install -g generator-angular-requirejs-grunt-bower // angularjs 와 requirejs 사용 
 - yo angular 로 최초 설치
 
 
@@ -46,3 +46,5 @@
 - 참고:  http://engineering.radius.com/post/77677879234/testing-angularjs-in-a-requirejs-environment
 
 5. npm init, npm install bower, npm install ..
+
+- npm으로 설치 후 웹페이지 만들기 매일 하기

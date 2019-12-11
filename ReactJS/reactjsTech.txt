@@ -1,0 +1,54 @@
+- ES 6 이후 문법
+ Arrow 함수
+ spread 인자
+ map, filter
+ import / export
+
+- react js Life cycle
+  mount                        update                  unmount
+  getDried            getDriedStateFromProps    componentWillUnmount
+  render              get
+  componentDidMount   render
+                      getSnapShot
+                      componentDidUpdate
+
+- react js component / functional 
+  class A extends React.Component {
+      constructor(props){
+          super(props);
+          this.state = {
+              ...
+          }
+      }
+      // Life Cycle function
+      // Costom function
+      render(){
+          return ();
+      }
+  }
+  export default A;
+
+  function A = (props) => {
+      this.state = {
+          ...
+      }
+      useEffect(){
+
+      }
+      return (
+          ...
+      )
+  }
+
+- react js styled component
+
+- react redux
+  : action(type, value)
+    dispatch(action)
+
+- SPA
+  create-react-app
+
+- Server Side
+  : 검색 엔진에 용이(SEO)
+
